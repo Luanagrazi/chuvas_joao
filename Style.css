@@ -10872,3 +10872,178 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.destaque {
+  border: 2px solid #FF0000; /* Borda vermelha */
+  padding: 10px; /* Espaçamento interno para o conteúdo */
+  margin: 10px 0; /* Espaçamento externo para afastar do conteúdo circundante */
+  position: relative;
+}
+
+.destaque::before {
+  content: "!";
+  font-size: 30px; 
+  position: absolute; /* Posição absoluta em relação ao container */
+  top: -15px; /* Posicione a interrogação acima do container */
+  left: 0%; /* Centralize horizontalmente */
+  background-color: #FFFF00; /* Mantenha a mesma cor de fundo do container */
+  padding: 5px; /* Espaçamento interno para a interrogação */
+  border: 2px solid #FF0000; /* Borda vermelha para a interrogação */
+  border-radius: 50%; /* Arredonde a interrogação para torná-la circular */
+  transform: translateX(-50%); /* Centralize horizontalmente em relação ao container */
+}
+
+:root {
+  --principal: #03a9f4;
+  --secundaria: #0d47a1;
+  --azul-escuro: #0d47a1;
+  --cinza-escuro: #222;
+  --branco: #fff;
+  --verde: #4caf50;
+  --vermelho: #f44336;
+}
+
+section {
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* classe para centralizar textos, paragrafos */
+.centro {
+  text-align: center;
+}
+
+/* div class questao com numero da questao e pergunta */
+.questao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#numQuestao {
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  background: var(--principal);
+  color: #fff;
+  padding: 6px 10px 4px 8px;
+  border-radius: 50%;
+}
+
+#pergunta {
+  margin-left: 1rem;
+  
+}
+
+.imagemDaQuestao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* article que acomoda a questao completa */
+.questoes {
+  user-select: none;
+  background: #fff;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  margin-bottom: 0.625rem;
+}
+
+.questoes ol li {
+  border: 1px solid var(--principal);
+  display: block;
+  margin-bottom: 0.625rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.questoes ol li:hover {
+  background: var(--principal);
+  cursor: pointer;
+}
+
+.bloqueado {
+  display: none;
+}
+
+.bloqueado li:hover {
+  display: none;
+}
+
+#instrucoes {
+  font-size: 1rem;
+  color: #191919;
+  padding: 0.625rem;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+}
+
+#aviso {
+  color: var(--principal);
+}
+
+#autoria {
+  margin-top: 0.625rem;
+  font-size: 0.75rem;
+}
+
+/* ANIMACAO */
+
+/* Animar o input */
+@keyframes piscar {
+  0% {
+      filter: drop-shadow(0 0 15px var(--principal));
+      -webkit-filter: drop-shadow(0 0 15px var(--principal));
+      -moz-filter: drop-shadow(0 0 15px var(--principal));
+      -o-filter: drop-shadow(0 0 15px var(--principal));
+      -ms-filter: drop-shadow(0 0 15px var(--principal));
+  }
+  100% {
+  }
+}
+
+.animar {
+  animation: piscar .75s infinite alternate;
+}
+
+.aparecer {
+  animation: aparecer .5s infinite alternate;
+}
+
+@keyframes aparecer {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.acertou {
+  background: var(--verde);
+  animation: aparecer 0.1s infinite alternate;
+}
+
+.errou {
+  background: var(--vermelho);
+  animation: aparecer 0.1s infinite alternate;
+}
+
+.placar {
+  padding: 1rem;
+  border-radius: 8px;
+  background:#03a9f4;
+  font-size: 2rem;
+}
